@@ -6,7 +6,6 @@ export const register = async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
-    // HASH THE PASSWORD
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -72,6 +71,6 @@ export const login = async (req, res) => {
   }
 };
 
-// export const logout = (req, res) => {
-//   res.clearCookie("token").status(200).json({ message: "Logout Successful" });
-// };
+export const logout = (req, res) => {
+  res.clearCookie("token").status(200).json({ message: "Logout Successful" });
+};
